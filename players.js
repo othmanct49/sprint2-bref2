@@ -8,10 +8,10 @@ export function get_name_valeur ( event  ){
  return input }
 }
 
-export function  get_avatar_cliqued (event){
+export function  get_avatar_cliqued (event , src_img){
     let get_avatar = event.target.closest('[data-imag]')
      let get_data_image = get_avatar.dataset.imag
-     let src_img = list_avatar[get_data_image]
+      src_img = list_avatar[get_data_image]
      return src_img ;
 
 }
