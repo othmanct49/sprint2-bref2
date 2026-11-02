@@ -15,3 +15,13 @@ export function  get_avatar_cliqued (event){
      return src_img ;
 
 }
+export function valid_submit (submit_botton ){
+ 
+       submit_botton.disabled = false
+  
+
+}
+export function invalid_submit (submit_botton){
+             submit_botton.disabled = true
+
+}
