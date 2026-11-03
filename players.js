@@ -43,7 +43,7 @@ export function  get_form (form , avatar_variabel){
 
 
          }
-        //  profile_data.push(data)
+         additemsLS(data)
          
 
     })
