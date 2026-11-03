@@ -1,5 +1,5 @@
- import {profile_data , list_avatar } from './storage.js'
- import {get_name_valeur ,get_avatar_cliqued ,  valid_submit , invalid_submit } from './players.js'
+ import { list_avatar  } from './storage.js'
+ import {get_name_valeur , get_avatar_cliqued ,  valid_submit , invalid_submit } from './players.js'
  import { error_msg ,valid_msg , real_team_avatar } from './ui.js'
    let name_valid_submit = false ;
   let avatar_live = "./img/avatar/avatar 1.png" 
@@ -15,7 +15,10 @@
  
     error_msg(error_msage , name_valid_submit)
     invalid_submit ( get_submit_botton )
-   }else {let  input_name = get_name_valeur(event) 
+   } else if (get_name_valeur(event) === true ){
+    deplecate_name_msg(error_msage , name_valid_submit)
+    invalid_submit ( get_submit_botton )
+   }else  {let  input_name = get_name_valeur(event) 
 
     valid_msg ( error_msage , name_valid_submit)
        valid_submit ( get_submit_botton )
