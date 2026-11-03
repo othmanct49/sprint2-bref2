@@ -2,7 +2,7 @@
  import {get_name_valeur ,get_avatar_cliqued ,  valid_submit , invalid_submit } from './players.js'
  import { error_msg ,valid_msg , real_team_avatar } from './ui.js'
    let name_valid_submit = false ;
-   const avatar_live = "./img/avatar/avatar 1.png" 
+  let avatar_live = "./img/avatar/avatar 1.png" 
   
    
  
@@ -25,8 +25,10 @@
     const get_avatar_live = document.getElementById('img-plus')
   const part_avatar =document.getElementById('icon')
 let get_avatar =part_avatar.addEventListener('click' , event =>{
-   let get_img_avatar = get_avatar_cliqued(event , avatar_live)
-       real_team_avatar (get_avatar_live , avatar_live)
+    avatar_live = get_avatar_cliqued(event )
+       
+     real_team_avatar(get_avatar_live , avatar_live) 
+       
      }
   ) 
 

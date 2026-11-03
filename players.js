@@ -8,10 +8,11 @@ export function get_name_valeur ( event  ){
  return input }
 }
 
-export function  get_avatar_cliqued (event , src_img){
+export function  get_avatar_cliqued (event ){
     let get_avatar = event.target.closest('[data-imag]')
      let get_data_image = get_avatar.dataset.imag
-      src_img = list_avatar[get_data_image]
+     let src_img = list_avatar[get_data_image]
+      console.log (src_img)
      return src_img ;
 
 }
@@ -25,3 +26,4 @@ export function invalid_submit (submit_botton){
              submit_botton.disabled = true
 
 }
+export function 
