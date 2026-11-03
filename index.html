@@ -51,7 +51,7 @@
             </div>
         </div>
     </nav>
-    <main">
+    <main>
 
 
 
@@ -60,7 +60,9 @@
        
         <div id="profile" class="grid grid-cols-1 lg:grid-cols-2 w-[95%] justify-items-center  mx-auto  pt-6 gap-3 ">
                <!-- -----------------------------profiles---------------------------- -->
-                <div id="profile" class=" w-[80%] h-100   bg-cremi/10  backdrop-blur-md border border-white/10 border-shadow-lg shadow-2xl rounded-[30px] ">
+                
+               <div id="list_profile" class=" w-[80%] h-100   bg-cremi/10  backdrop-blur-md border border-white/10 border-shadow-lg shadow-2xl rounded-[30px] ">
+                <article  id="profile-1">
                 <div class="flex flex-row "> 
                     <div id="profile1" class="flex  justify-center px-4  pt-6 ">
                         <img src="#" class="w-14 h-14 rounded-full border border-cremi/40  ">
@@ -83,80 +85,94 @@
                 </div>
                 <div class="pt-4">
                 <div class="bg-background  flex flex-wrap justify-center text-cremi rounded-full w-[60%] h-10 mx-auto ">
-                     <button>select profil</button>
-                   </div></div>
-
-
+                     <button data-id="profile1" >select profil</button>
+                   </div>
                 </div>
+            </article>
+
+               </div>
                 <!------------------------------- adddd ------------------->
            
-                <div
-                    class="  w-[80%]    bg-cremi/10  backdrop-blur-md border border-white/10 border-shadow-lg shadow-2xl rounded-[30px] ">
-                    <div id="img-plus" class="flex  justify-center  pt-6 ">
-                        <img src="./img/avatar/avatar4.png" class="w-20 h-20 rounded-full ">
+                <div  id="creation_profile"  class="  w-[80%]    bg-cremi/10  backdrop-blur-md border border-white/10 border-shadow-lg shadow-2xl  px-4 rounded-[30px] ">
+                    <div  class="flex  justify-center  pt-6 ">
+                        <img id="img-plus" src="./img/avatar/avatar4.png" class="w-20 h-20 rounded-full ">
                     </div>
                     <div class="text-cremi text-bold text-[20px] px-4 pt-4">
                         <h1>chose name</h1>
                     </div>
-                    <form id="form" class="grid grid-colums-2 text-cremi pt-4 gap-4  ">
+                    <form>
+                    <div id="form_creation" class="flex flex-col text-cremi pt-4 gap-4   ">
+                        <div id="input_name" >
                         <input data-type="name" placeholder="your name "
-                            class="border border-cremi/20 rounded-full  w-[90%] h-[40px] bg-background mx-auto  pt px-6 ">
-
-                    </form>
+                            class="border border-cremi/20 rounded-full  w-[90%] h-[40px] bg-background    px-6 ">
+                            <p id="name_error_msg" class="text-red-400 px-6 "></p>
+                        </div>
+                   
                     <div class="text-cremi text-bold text-[20px] px-4 pt-4">
                         <h1>chose avatar</h1>
                     </div>
+                 
                     <div id="icon" class=" grid  grid-cols-4 gap-1 pt-4 justify-items-center ">
-                        <div id="avatr1">
+                        <div data-imag="avatar1" >
                             <img src="./img/avatar/avatar 1.png" class="w-12 h-12 rounded-full   ">
 
                         </div>
-                        <div id="avatr1">
+                        <div  data-imag="avatar2" >
                             <img src="./img/avatar/avatar2.png" class="w-12 h-12 rounded-full   ">
 
                         </div>
-                        <div id="avatr1">
+                        <div  data-imag="avatar3">
                             <img src="./img/avatar/avatar3.png" class="w-12 h-12 rounded-full   ">
 
                         </div>
-                        <div id="avatr1">
-                            <img src="./img/avatar/avatar5.png" class="w-12 h-12 rounded-full   ">
+                        <div  data-imag="avatar4">
+                            <img src="./img/avatar/avatar4.png" class="w-12 h-12 rounded-full   ">
 
                         </div>
-                        <div id="avatr1">
-                            <img src="./img/avatar/avatar6.png" class="w-12 h-12 rounded-full   ">
+                        <div  data-imag="avatar5">
+                            <img  src="./img/avatar/avatar5.png" class="w-12 h-12 rounded-full   ">
 
                         </div>
-                        <div id="avatr1">
-                            <img src="./img/avatar/avatar7.png" class="w-12 h-12 rounded-full  ">
+                        <div  data-imag="avatar6">
+                            <img src="./img/avatar/avatar6.png" class="w-12 h-12 rounded-full  ">
 
                         </div>
-                        <div id="avatr1">
+                        <div  data-imag="avatar7">
+                            <img src="./img/avatar/avatar7.png" class="w-12 h-12 rounded-full   ">
+
+                        </div>
+                        <div  data-imag="avatar8">
                             <img src="./img/avatar/avatar8.png" class="w-12 h-12 rounded-full   ">
 
                         </div>
-                        <div id="avatr1">
+                        <div  data-imag="avatar9">
                             <img src="./img/avatar/avatar9.png" class="w-12 h-12 rounded-full   ">
 
                         </div>
-                        <div id="avatr1">
+                        <div  data-imag="avatar10">
                             <img src="./img/avatar/avatar10.png" class="w-12 h-12 rounded-full   ">
 
                         </div>
-                        <div id="avatr1">
+                        <div   data-imag="avatar11">
                             <img src="./img/avatar/avatar11.png" class="w-12 h-12 rounded-full   ">
 
                         </div>
-                        <div id="avatr1" >
+                         <div   data-imag="avatar12">
                             <img src="./img/avatar/avatar12.png" class="w-12 h-12 rounded-full   ">
 
                         </div>
+                        </div>
+                    
+                         <button type="submit"  id ='submit_format_criation' disabled class="  bg-gold  w-[200px] h-10  text-cremi rounded-full  mx-auto  disabled:opacity-50 disabled:cursor-not-allowed " > submit</button>
+                            </div>
+                        </form>
+
                         <div class=" h-16 "> </div>
                     </div>
                 </div>
-
+             <script type="module" src="./main.js" ></script>
             
-
+           
              
             
 
@@ -171,6 +187,7 @@
 
 
         </div>
+        
 
 
 
