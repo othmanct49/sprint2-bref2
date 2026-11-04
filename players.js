@@ -1,3 +1,4 @@
+import {affichage_profiles} from './ui.js'
 import {list_avatar , select_items , get_array , deletItemsLS , additemsLS, if_vide } from './storage.js' ; 
 export function get_name_valeur ( event  ){
  let input = event.target.closest('[data-type="name"]').value
@@ -31,10 +32,10 @@ export function invalid_submit (submit_botton){
              submit_botton.disabled = true
 
 }
-export function  get_form (form , avatar_variabel){
+export function  get_form (form , avatar_variabel , dom ){
     let listener_submit = form.addEventListener('submit' , event => {
          event.preventDefault()
-         let name_form = form.querySelectour('[data-type="name"]').value ;
+         let name_form = form.querySelector('[data-type="name"]').value ;
          let data ={
             id : `EXE-${Date.now()}` ,
             nickname: name_form , 
@@ -44,6 +45,7 @@ export function  get_form (form , avatar_variabel){
 
          }
          additemsLS(data)
+         affichage_profiles(dom)
          
 
     })

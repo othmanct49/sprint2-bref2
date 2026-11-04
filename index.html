@@ -8,24 +8,24 @@
     <link href="./src/output.css" rel="stylesheet">
 </head>
 
-<body class="lg:bg-[url('/img/bg.png')]  bg-[url('/img/bgm.png')] min-h-screen bg-cover bg-center bg-no-repeat  ">
+<body class="lg:bg-[url('/img/bg.png')]  bg-[url('/img/bgm.png')] min-h-screen bg-cover bg-center   ">
     <!-- <img src="./img/bg.png" alt=""> -->
     <!-- haider -->
     <header class="top-0 sticky z-50 ">
         <div class="bg-background/40  backdrop-blur border-white/20 shadow-lg w-full h-[70px] lg:h-[100px] pt-4 px-4 rounded-[10px]">
             <div class="mx-auto flex max-w-7xl flex-row items-center justify-center lg:justify-between  ">
                 <img src="img/logo.png" width="19px">
-                <nav
-                    class=" hidden lg:flex  flex flex-row  w-[690px] h-[66px] bg-gold  rounded-full justify-between px-1 gap-1 text-cremi ">
-                    <div class=" flex w-[222px] mx-auto   h-[60px]   my-auto bg-grouna rounded-full  ">
-                        <p class="my-auto mx-auto  "> players </p>
+                <nav 
+                    class="nav_bar hidden lg:flex  flex flex-row  w-[690px] h-[66px] bg-gold  rounded-full justify-between px-1 gap-1 text-cremi ">
+                      <div id="players" class=" flex w-[222px] mx-auto   h-[60px]   my-auto  bg-grouna rounded-full ">
+                        <a href="./index.html" class="my-auto mx-auto   "> players </a>
                     </div>
-                    <div class=" flex w-[222px] h-[60px]   my-auto   ">
-                        <h1 class="my-auto mx-auto  "> game </h1>
+                    <div id="game" class=" flex w-[222px] h-[60px]   my-auto      ">
+                        <a href="./game.html" class="my-auto mx-auto  "> game </a>
                     </div>
 
-                    <div class=" flex  w-[222px] h-[60px]   my-auto    ">
-                        <h1 class="my-auto mx-auto  "> history </h1>
+                    <div id="history" class=" flex  w-[222px] h-[60px]   my-auto    ">
+                        <a href="./history.html" class="my-auto mx-auto  "> history </a>
 
                     </div>
                 </nav>
@@ -35,24 +35,24 @@
     </header>
     <!---------------------------------   nav mobile  ------------------------ -->
     <nav class="pt-4">
-        <div
-            class=" lg:hidden  flex flex-row   w-[90%] h-[66px]  bg-gold  rounded-full justify-between  mx-auto px-1 gap-1 text-cremi  ">
+        <div 
+            class="nav_bar lg:hidden  flex flex-row   w-[90%] h-[66px]  bg-gold  rounded-full justify-between  mx-auto px-1 gap-1 text-cremi  ">
 
-            <div class=" flex w-[32.17%] mx-auto   h-[60px]   my-auto   my-auto  bg-grouna rounded-full   ">
-                <p class="my-auto mx-auto  "> players </p>
+            <div id="players" class=" flex w-[32.17%] mx-auto   h-[60px]   my-auto   my-auto  bg-grouna rounded-full   ">
+                <a href="index.html"  class="my-auto mx-auto  "> players </a>
             </div>
-            <div class=" flex w-[32.17%] h-[60px] ">
-                <h1 class="my-auto mx-auto  "> game </h1>
+            <div id="game" class=" flex w-[32.17%] h-[60px] ">
+                <a href="game.html"  class="my-auto mx-auto  "> game </a>
             </div>
 
-            <div class=" flex  w-[32.17%] h-[60px]   my-auto    ">
-                <h1 class="my-auto mx-auto  "> history </h1>
+            <div id="history" class=" flex  w-[32.17%] h-[60px]   my-auto    ">
+                <a href="history.html" class="my-auto mx-auto  "> history </a>
 
             </div>
         </div>
     </nav>
     <main>
-
+    <section id="section_playrs" class="">
 
 
         <!-------------------------------  form and profiles ------------------->
@@ -61,34 +61,10 @@
         <div id="profile" class="grid grid-cols-1 lg:grid-cols-2 w-[95%] justify-items-center  mx-auto  pt-6 gap-3 ">
                <!-- -----------------------------profiles---------------------------- -->
                 
-               <div id="list_profile" class=" w-[80%] h-100   bg-cremi/10  backdrop-blur-md border border-white/10 border-shadow-lg shadow-2xl rounded-[30px] ">
-                <article  id="profile-1">
-                <div class="flex flex-row "> 
-                    <div id="profile1" class="flex  justify-center px-4  pt-6 ">
-                        <img src="#" class="w-14 h-14 rounded-full border border-cremi/40  ">
-                        <div class=" text-cremi px-4">
-                            <p id="profile_name"  class="">name</p>
-                       
+               <div id="list_profile" class=" w-[80%]   bg-cremi/10  backdrop-blur-md border border-white/10 border-shadow-lg shadow-2xl rounded-[30px] ">
+                
+              
 
-                            <div class="flex flex-wrap gap-9 ">
-                                <button class=" ">win </button>
-                                <button class="" >loss</button>
-                            </div>
-
-                        </div>
-                        <div>
-                            <button class="text-cremi">icon idit</button>
-                        </div> 
-                </div>
-                   
-
-                </div>
-                <div class="pt-4">
-                <div class="bg-background  flex flex-wrap justify-center text-cremi rounded-full w-[60%] h-10 mx-auto ">
-                     <button data-id="profile1" >select profil</button>
-                   </div>
-                </div>
-            </article>
 
                </div>
                 <!------------------------------- adddd ------------------->
@@ -100,8 +76,8 @@
                     <div class="text-cremi text-bold text-[20px] px-4 pt-4">
                         <h1>chose name</h1>
                     </div>
-                    <form>
-                    <div id="form_creation" class="flex flex-col text-cremi pt-4 gap-4   ">
+                    <form id="form_creation">
+                    <div    class="flex flex-col text-cremi pt-4 gap-4   ">
                         <div id="input_name" >
                         <input data-type="name" placeholder="your name "
                             class="border border-cremi/20 rounded-full  w-[90%] h-[40px] bg-background    px-6 ">
@@ -188,7 +164,26 @@
 
         </div>
         
+   </section id="section_game">
+   <section class=" hidden flex flex-col items-center pt-4">
+    <div class=" flex flex-wrap">
 
+    </div>
+     <div class=" w-[96%] h-150 bg-cremi/10  backdrop-blur-md border border-white/10 border-shadow-lg shadow-2xl   rounded-[30px]">
+ 
+     </div>
+
+
+
+
+
+
+
+   </section> 
+   <section   id="section_history" class="hidden flex flex-col items-center pt-4 " >
+
+
+   </section>
 
 
 
