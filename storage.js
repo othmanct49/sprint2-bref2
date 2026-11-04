@@ -16,7 +16,7 @@ export function deletItemsLS  ( items) {
     
 } 
 export function get_array ( ){
-   const array_aff = JSON.parse(localStorage.getItem('profile_data'))
+   const array_aff = JSON.parse(localStorage.getItem('profile_data')) || []
    return array_aff ;
 }
 export function select_items ( items ) {

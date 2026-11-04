@@ -1,8 +1,10 @@
  import { list_avatar  } from './storage.js'
  import {get_name_valeur , get_avatar_cliqued ,  valid_submit , invalid_submit ,get_form } from './players.js'
  import { error_msg ,valid_msg , real_team_avatar, deplecate_name_msg , affichage_profiles , } from './ui.js'
+ import {isPlayer1Roi ,if_start  } from './game.js'
   const profile_list = document.getElementById('list_profile')
-  affichage_profiles(list_profile)
+  if (profile_list){
+  affichage_profiles(profile_list)}
    let name_valid_submit = false ;
   let avatar_live = "./img/avatar/avatar 1.png" 
 
@@ -12,6 +14,7 @@
  
  const createur = document.getElementById('form_creation')
   const get_submit_botton = document.getElementById('submit_format_criation')
+  if (createur){
  let get_name = createur.addEventListener('input' , event => {
      console.log(get_name_valeur(event))
      const error_msage = document.getElementById('name_error_msg')
@@ -28,17 +31,24 @@
        valid_submit ( get_submit_botton )
    }
    
- }  )
+ }  ) }
     const get_avatar_live = document.getElementById('img-plus')
   const part_avatar =document.getElementById('icon')
+   if(part_avatar){
 let get_avatar =part_avatar.addEventListener('click' , event =>{
     avatar_live = get_avatar_cliqued(event )
        
      real_team_avatar(get_avatar_live , avatar_live) 
        
      }
-  ) 
- 
-  get_form(createur  , avatar_live ,  profile_list )
+  ) }
+  if (createur && profile_list){
+  get_form(createur  , avatar_live ,  profile_list )}
+  const get_start_button = document.getElementById('start_button')
+  console.log ("test")
+  if (get_start_button){
+  if_start (get_start_button)}
+   let is1_roi =isPlayer1Roi()
+
 
  
