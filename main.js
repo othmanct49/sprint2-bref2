@@ -1,8 +1,12 @@
  import { list_avatar  } from './storage.js'
- import {get_name_valeur , get_avatar_cliqued ,  valid_submit , invalid_submit } from './players.js'
- import { error_msg ,valid_msg , real_team_avatar } from './ui.js'
+ import {get_name_valeur , get_avatar_cliqued ,  valid_submit , invalid_submit ,get_form } from './players.js'
+ import { error_msg ,valid_msg , real_team_avatar, deplecate_name_msg , affichage_profiles , } from './ui.js'
+  const profile_list = document.getElementById('list_profile')
+  affichage_profiles(list_profile)
    let name_valid_submit = false ;
   let avatar_live = "./img/avatar/avatar 1.png" 
+
+   
   
    
  
@@ -34,5 +38,7 @@ let get_avatar =part_avatar.addEventListener('click' , event =>{
        
      }
   ) 
+ 
+  get_form(createur  , avatar_live ,  profile_list )
 
  
