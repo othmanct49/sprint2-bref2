@@ -15,9 +15,22 @@ export function deletItemsLS  ( items) {
         
     
 } 
+// export function get_indexobjet  ( items) {
+//     let profile_data = JSON.parse(localStorage.getItem('profile_data')) 
+//     const index_delet = profile_data.findIndex (profile_data => profile_data.nickname == items)
+//     if (index_delet == -1){
+//         return ; 
+//     }
+//     return index_delet ; 
+        
+    
+// } 
 export function get_array ( ){
    const array_aff = JSON.parse(localStorage.getItem('profile_data')) || []
    return array_aff ;
+}
+export function addarrayLS (objet){
+     localStorage.setItem('profile_data' , JSON.stringify(objet))
 }
 export function select_items ( items ) {
     let profile_data = JSON.parse(localStorage.getItem('profile_data')) 
@@ -27,6 +40,7 @@ export function select_items ( items ) {
     } 
     return  find_objet ;
 } 
+
 export function if_vide (){
      let  array = JSON.parse(localStorage.getItem('profile_data'))
 
@@ -36,6 +50,24 @@ export function if_vide (){
         return false ;
     }
 }
+////// finde items by id 
+export function select_items_byid( items ) {
+    let profile_data = JSON.parse(localStorage.getItem('profile_data')) 
+    const find_objet = profile_data.find( index => index.id == items)
+      if (find_objet == -1){
+        return false ; 
+    } 
+    return  find_objet ;
+} 
+export function setProfileEditInForm ( avatar   , name  , objet , checker  ){
+   const data_to_edit = objet 
+   if (data_to_edit){
+   avatar.value = objet.avatar
+   name.value = objet.name
+   return objet.id 
+}}
+
+
 
    
  export let list_avatar={

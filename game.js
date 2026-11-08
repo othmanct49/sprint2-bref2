@@ -1,35 +1,38 @@
-let roi_or = 1 ; 
-let who_is_roi ='' ;
-let player1_cart = []
-let player2_cart = []
-export function if_start ( start_button){
+import{select_items} from './storage.js'
+export function if_start ( start_button , dom){
  const start_listener =start_button.addEventListener('click' , event => {
    const clicked_start = event.target
    console.log(clicked_start)
    if (!clicked_start) {
     return false ;
    } else {
-      start_button.style.display = "none";   
+      start_button.style.display = "none";
+      dom.hidden = false ,
        console.log("true")
      return true ;
    }
  }) 
 }
-export function isPlayer1Roi (who_is_roi){
-const randomm = Math.random()
-if (randomm <=  0.50){
-      who_is_roi = 'player1' ;
-}else{
-     who_is_roi = 'player2' ;
-}
-} 
+ export function nwe_data_game (){
+    let data_game = {
+        round : 1 ,
+        playerScor : 0 ,
+        computerScor : 0 ,
+        playerCard :  [ 'Empereur' , 'Citoyen' , 'Citoyen' , 'Citoyen' , 'Citoyen'] , 
+        pcCard :  [ 'Esclave' , 'Citoyen' , 'Citoyen' , 'Citoyen' , 'Citoyen'] , 
+        playerCamp: 'Empereur'
 
-export function cart_round ( player1_cart , player2_cart ,  who_is_roi){
-    let cas_1 =  [ 'Empereur', 'Citoyen','Citoyen','Citoyen','Citoyen' ]
-    let cas_2 =  [ 'Esclave', 'Citoyen','Citoyen','Citoyen','Citoyen' ]
-    if (roi_or < 5 && who_is_roi == 'player1'  ){
-      player1_cart = cas_1
-      player2_cart = cas_2
     }
+    return data_game ; 
+}
+/////// chose profile
+export function  chose_profile (domselect , domadd){
+ const listener = domselect.addEventListener ('click' , event => {
+  let profile = event.target.closest('[data-select]')
+  let get_name_profile = profile.dataset.select 
+    const data_profile = select_items(get_name_profile)
 
+    
+
+ })
 }
