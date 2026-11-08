@@ -1,5 +1,5 @@
 import {affichage_profiles} from './ui.js'
-import {list_avatar , select_items , get_array , deletItemsLS , additemsLS, if_vide  , addarrayLS } from './storage.js' ; 
+import {list_avatar , select_items , get_array , deletItemsLS , additemsLS, if_vide  , addarrayLS , select_items_byid} from './storage.js' ; 
 export function get_name_valeur ( event  ){
  let input = event.target.closest('[data-type="name"]').value
     let if_valid= /^[A-Za-z0-9*]{3,15}$/.test(input)
@@ -85,10 +85,26 @@ export function  get_form (form  , dom  , sabmit ){
          form.reset()
           avatar_img.setAttribute('src' , './img/avatar/avatar4.png')
          invalid_submit( sabmit)
+
          
 
     }
 })}
+export function selectedCART (form){
+    form.addEventListener('click' , event => {
+      const   get_event =  event.target.closest('[data-select]')
+       let   get_id_profile_selected = get_event.dataset.select 
+       const objet_data = select_items_byid(get_id_profile_selected)
+       return {
+        id: get_id_profile_selected,
+        avatar: objet_data.avatar 
+       }
+       
+         
+    
+    
+      })
+}
 
 
 

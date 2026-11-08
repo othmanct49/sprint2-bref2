@@ -64,3 +64,8 @@ export function affichage_profiles ( dom  ){
     
 
 }
+export function profil_select_affichage(id , dom ){
+    dom.querySelector('.')
+
+
+}

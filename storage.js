@@ -15,6 +15,7 @@ export function deletItemsLS  ( items) {
         
     
 } 
+
 // export function get_indexobjet  ( items) {
 //     let profile_data = JSON.parse(localStorage.getItem('profile_data')) 
 //     const index_delet = profile_data.findIndex (profile_data => profile_data.nickname == items)

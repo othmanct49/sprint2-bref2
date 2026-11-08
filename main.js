@@ -14,6 +14,7 @@ let name_form = document.querySelector('[data-type="name"]')
 
 
 
+
 console.log(game_section)
 if (profile_list) {
   affichage_profiles(profile_list)
@@ -80,6 +81,10 @@ if (part_avatar) {
 if (createur && profile_list ) {
     get_form(createur, profile_list , get_submit_botton  )
 }  
+
+/////////////////////////////////// select profile
+   if (profile_list){
+  profile_list  }
  
 
 ////////////////////////////
