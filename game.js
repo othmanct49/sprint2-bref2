@@ -36,3 +36,20 @@ export function  chose_profile (domselect , domadd){
 
  })
 }
+//////////// game rules
+export const duel =(plaeyr_cart , pc_cart ) =>{
+  if ( plaeyr_cart === 'Empereur'  && pc_cart === 'Citoyen'){
+    return 'victoire'
+  } 
+   if ( plaeyr_cart === 'Esclave'  && pc_cart === 'Empereur' ){
+    return 'victoire'
+  }  
+  if ( plaeyr_cart === 'Citoyen'  && pc_cart === 'Esclave'){
+    return 'victoire'
+  } 
+  if (plaeyr_cart === pc_cart){
+    return 'égalité'
+  }
+  return 'défaite'
+  
+}
