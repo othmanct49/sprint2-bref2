@@ -1,4 +1,5 @@
-import { get_array} from './storage.js'
+import { get_array , get_data_PS } from './storage.js'
+
 
 
 export function error_msg (vr_msg , vr_checker){
@@ -53,7 +54,7 @@ export function affichage_profiles ( dom  ){
                 </div>
                  <div class="pt-4">
                 <div class="bg-background  flex flex-wrap justify-center text-cremi rounded-full w-[90%] h-10 mx-auto ">
-                     <button data-select="${element.nickname}" >select profil</button>
+                     <button data-select="${element.id}" >select profil</button>
                    </div>
                 </div>
                 </div>
@@ -64,8 +65,22 @@ export function affichage_profiles ( dom  ){
     
 
 }
-export function profil_select_affichage(id , dom ){
-    dom.querySelector('.')
+export function profil_select_affichage( dom ){
+    const objet_data = get_data_PS()
+    if (!objet_data || !dom) return
+     
+dom.setAttribute ('src' , `${objet_data.avatar}`)
 
+
+}
+export function  checkifprofileselect( dom  , start_dom){
+const profile = get_data_PS ()
+if (!profile ){
+    return
+} else  {
+ dom.hidden = true ; 
+ start_dom.hidden =false ;
+
+}
 
 }

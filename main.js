@@ -1,6 +1,6 @@
-import { list_avatar, deletItemsLS , select_items_byid } from './storage.js'
-import { get_name_valeur, get_avatar_cliqued, valid_submit, invalid_submit, get_form, getItemdelet  } from './players.js'
-import { error_msg, valid_msg, real_team_avatar, deplecate_name_msg, affichage_profiles, } from './ui.js'
+import { list_avatar, deletItemsLS , select_items_byid , addprofil_selected , remplace_profile  } from './storage.js'
+import { get_name_valeur, get_avatar_cliqued, valid_submit, invalid_submit, get_form, getItemdelet  , selectedCART } from './players.js'
+import { error_msg, valid_msg, real_team_avatar, deplecate_name_msg, affichage_profiles, profil_select_affichage ,  checkifprofileselect } from './ui.js'
 import { if_start, nwe_data_game } from './game.js'
 const profile_list = document.getElementById('list_profile')
 const game_section = document.getElementById('game_section')
@@ -11,6 +11,9 @@ const get_start_button = document.getElementById('start_button')
 const player_card = document.getElementById('player_2_cart')
 const get_submit_botton = document.getElementById('submit_format_criation')
 let name_form = document.querySelector('[data-type="name"]')
+ export const domprofileselect = document.querySelector('.addprofile img')
+  const profileifselected = document.getElementById('profileifselected')
+
 
 
 
@@ -63,6 +66,7 @@ if (part_avatar) {
   )
 }
 // /////////////////////////// val
+    if (profile_list){
      profile_list.addEventListener('click' , event => {
       const get_target = event.target.closest('[data-edit]')
         if (!get_target) {
@@ -76,7 +80,7 @@ if (part_avatar) {
          valid_submit(get_submit_botton)
 
        
-    })
+    })}
     
 if (createur && profile_list ) {
     get_form(createur, profile_list , get_submit_botton  )
@@ -84,7 +88,12 @@ if (createur && profile_list ) {
 
 /////////////////////////////////// select profile
    if (profile_list){
-  profile_list  }
+  const id_select = selectedCART ( profile_list  , domprofileselect )
+  //  remplace_profile( domprofileselect  , id_select  )
+
+}
+profil_select_affichage(domprofileselect)
+
  
 
 ////////////////////////////
@@ -111,6 +120,8 @@ if (profile_list) {
 }
 //////////////////////////////// 
 
-
+if (profileifselected){
+   checkifprofileselect( profileifselected , get_start_button )
+}
 
 
