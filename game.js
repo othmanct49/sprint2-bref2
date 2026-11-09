@@ -70,7 +70,10 @@ export const if_switch = (manche) => {
   return false ; 
 }
 export const remove_cart = (carts , index)=> {
-  return carts.filter((cart , i ) => i !== index)
+  // kanakhdo copie b spread, w kan7aydo l carta mn copie (l array l asli ma kaytbdlch)
+  const copie = [...carts]
+  copie.splice(index, 1)
+  return copie
 }
 export const play_cart = (match, index_player) => {
   const index_pc = pc_choix(match.pc_cart)

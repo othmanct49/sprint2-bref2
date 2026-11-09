@@ -34,8 +34,9 @@ export function addarrayLS (objet){
      localStorage.setItem('profile_data' , JSON.stringify(objet))
 }
 export function select_items ( items ) {
-    let profile_data = JSON.parse(localStorage.getItem('profile_data')) 
-    const find_objet = profile_data.find( index => index.nickname == items)
+    let profile_data = JSON.parse(localStorage.getItem('profile_data')) || []
+    // kan9arno b toLowerCase bach "Ali" w "ali" ykono nafs smiya
+    const find_objet = profile_data.find( index => index.nickname.toLowerCase() == items.toLowerCase())
       if (find_objet == -1){
         return false ; 
     } 
@@ -53,7 +54,7 @@ export function if_vide (){
 }
 ////// finde items by id 
 export function select_items_byid( items ) {
-    let profile_data = JSON.parse(localStorage.getItem('profile_data')) 
+    let profile_data = JSON.parse(localStorage.getItem('profile_data')) || []
     const find_objet = profile_data.find( index => index.id == items)
       if (find_objet == -1){
         return false ; 
@@ -99,4 +100,21 @@ export function setProfileEditInForm ( avatar   , name  , objet , checker  ){
 export function get_data_PS (){
     const data = JSON.parse(localStorage.getItem( 'profile_selected'  )) || null ;
     return data ;
+}
+// katms7 'profile_selected' ila kan howa profile li tmsa7
+export const remove_profile_selected = (id) => {
+  const profile_selected = get_data_PS()
+  if (!profile_selected) {
+    return
+  }
+  if (profile_selected.id === id) {
+    localStorage.removeItem('profile_selected')
+  }
+}
+export function get_history() {
+  return JSON.parse(localStorage.getItem('history')) || []
+}
+
+export function save_history(history) {
+  localStorage.setItem('history', JSON.stringify(history))
 }
