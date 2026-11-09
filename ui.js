@@ -1,4 +1,5 @@
-import { get_array} from './storage.js'
+import { get_array , get_data_PS } from './storage.js'
+
 
 
 export function error_msg (vr_msg , vr_checker){
@@ -53,7 +54,7 @@ export function affichage_profiles ( dom  ){
                 </div>
                  <div class="pt-4">
                 <div class="bg-background  flex flex-wrap justify-center text-cremi rounded-full w-[90%] h-10 mx-auto ">
-                     <button data-select="${element.nickname}" >select profil</button>
+                     <button data-select="${element.id}" >select profil</button>
                    </div>
                 </div>
                 </div>
@@ -63,4 +64,83 @@ export function affichage_profiles ( dom  ){
     });
     
 
+}
+
+export function profil_select_affichage( dom ){
+    const objet_data = get_data_PS()
+    if (!objet_data || !dom) return
+     
+dom.setAttribute ('src' , `${objet_data.avatar}`)
+
+
+}
+export function if_start ( start_button , dom){
+ const start_listener =start_button.addEventListener('click' , event => {
+   const clicked_start = event.target
+   console.log(clicked_start)
+   if (!clicked_start) {
+    return false ;
+   } else {
+      start_button.style.display = "none";
+      dom.hidden = false ,
+       console.log("true")
+     return true ;
+   }
+ }) 
+}
+
+
+export function  checkifprofileselect( dom  , start_dom){
+const profile = get_data_PS ()
+if (!profile ){
+    return
+} else  {
+ dom.hidden = true ; 
+ start_dom.hidden =false ;
+
+}
+
+}
+export const affichage_player_cart = (dom, carts) => {
+  dom.innerHTML = ''
+  carts.forEach((cart, i) => {
+    dom.insertAdjacentHTML('beforeend', `
+      <div class="my-auto cursor-pointer hover:-translate-y-2 transition" data-index="${i}">
+        <img src="./img/cart/${cart.toLowerCase()}.png " class="h-[85px] w-auto rounded-[8px]">
+      </div>
+    `)
+  })
+}
+export const affichage_table = (dom_player, dom_pc, cart_player, cart_pc) => {
+  dom_player.innerHTML = `<img src="./img/cart/${cart_player.toLowerCase()}.png" class="h-full mx-auto">`
+  dom_pc.innerHTML = `<img src="./img/cart/${cart_pc.toLowerCase()}.png" class="h-full mx-auto">`
+}
+
+export const vider_table = (dom_player, dom_pc) => {
+  dom_player.innerHTML = ''
+  dom_pc.innerHTML = ''
+}
+export const affichage_infos = (match, numero_groupe, premier) => {
+  document.getElementById('info_manche').textContent = `${match.manche}/12`
+  document.getElementById('info_groupe').textContent = `${numero_groupe}/4`
+  document.getElementById('info_camp').textContent = match.player_camp
+  document.getElementById('info_premier').textContent = premier
+  document.getElementById('info_player_score').textContent = match.player_score
+  document.getElementById('info_pc_score').textContent = match.pc_score
+}
+export const affichage_pc_cart = (dom, carts) => {
+  dom.innerHTML = ''
+  carts.forEach(() => {
+    dom.insertAdjacentHTML('beforeend', `
+      <div class="my-auto">
+        <img src="./img/cart/Roman crown laurel card back.png" class="h-[85px] w-auto rounded-[8px]">
+      </div>
+    `)
+  })
+}
+export const affichage_fin_match = (game_dom, fin_dom, resultat, match) => {
+  game_dom.hidden = true
+  fin_dom.hidden = false
+  document.getElementById('fin_resultat').textContent = resultat
+  document.getElementById('fin_score').textContent = `Vous ${match.player_score} - ${match.pc_score} PC`
 }

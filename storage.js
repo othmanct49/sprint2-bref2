@@ -1,4 +1,4 @@
-
+ 
 export function additemsLS ( items ){
  let profile_data = JSON.parse(localStorage.getItem('profile_data')) ||[] ; 
  profile_data.push(items)
@@ -15,6 +15,7 @@ export function deletItemsLS  ( items) {
         
     
 } 
+
 // export function get_indexobjet  ( items) {
 //     let profile_data = JSON.parse(localStorage.getItem('profile_data')) 
 //     const index_delet = profile_data.findIndex (profile_data => profile_data.nickname == items)
@@ -69,6 +70,7 @@ export function setProfileEditInForm ( avatar   , name  , objet , checker  ){
 
 
 
+
    
  export let list_avatar={
     avatar1:"./img/avatar/avatar 1.png",
@@ -83,4 +85,18 @@ export function setProfileEditInForm ( avatar   , name  , objet , checker  ){
     avatar10:"./img/avatar/avatar10.png" , 
     avatar11:"./img/avatar/avatar11.png" , 
     avatar12:"./img/avatar/avatar12.png" , 
+}
+
+ export function addprofil_selected(profil_selected ){
+    localStorage.setItem('profile_selected' , JSON.stringify(profil_selected))
+
+ }
+ export function remplace_profile( id ){
+     const objet_data = select_items_byid(id)
+      addprofil_selected (objet_data)
+      
+}
+export function get_data_PS (){
+    const data = JSON.parse(localStorage.getItem( 'profile_selected'  )) || null ;
+    return data ;
 }

@@ -7,52 +7,37 @@
     <title>EXE</title>
     <link href="./src/output.css" rel="stylesheet">
 </head>
-
+ 
 <body class="lg:bg-[url('/img/bg.png')]  bg-[url('/img/bgm.png')] min-h-screen bg-cover bg-center   ">
     <!-- <img src="./img/bg.png" alt=""> -->
-    <!-- haider -->
+    <!------------------------------------------------------- haider DESCKTOOOP  -->
     <header class="top-0 sticky z-50 ">
-        <div class="bg-background/40  backdrop-blur border-white/20 shadow-lg w-full h-[70px] lg:h-[100px] pt-4 px-4 rounded-[10px]">
-            <div class="mx-auto flex max-w-7xl flex-row items-center justify-center lg:justify-between  ">
+        <div class="bg-background/40  backdrop-blur border-white/20 shadow-lg w-full h-[80px] lg:h-[100px] pt-4 px-4 rounded-[10px]  " >
+            <div class="mx-auto flex max-w-7xl flex-row items-center justify-between  ">
                 <img src="img/logo.png" width="19px">
                 <nav 
-                    class="nav_bar hidden lg:flex  flex flex-row  w-[690px] h-[66px] bg-gold  rounded-full justify-between px-1 gap-1 text-cremi ">
-                    <div id="players" class=" flex w-[222px] mx-auto   h-[60px]   my-auto ">
+                    class="nav_bar flex  flex flex-row w-[60%]  lg:w-[690px] lg:h-[66px]  bg-background/20 border backdrop-blur-md border-cremi/10  shadow  shadow-2xl  rounded-full justify-between  mx-auto px-1 gap-1 text-cremi  ">
+                    <div id="players" class=" flex w-[32.17%] lg:w-[222px] mx-auto   h-[50px]   my-auto ">
                         <a href="./index.html" class="my-auto mx-auto   "> players </a>
                     </div>
-                    <div id="game" class=" flex w-[222px] h-[60px]   my-auto bg-grouna rounded-full     ">
+                    <div id="game" class=" flex w-[32.17%] lg:w-[222px] h-[50px]   my-auto bg-gold rounded-full     ">
                         <a href="./game.html" class="my-auto mx-auto  "> game </a>
                     </div>
 
-                    <div id="history" class=" flex  w-[222px] h-[60px]   my-auto    ">
+                    <div id="history" class=" flex w-[32.17%]  lg:w-[222px] h-[50px]   my-auto    ">
                         <a href="./history.html" class="my-auto mx-auto  "> history </a>
 
                     </div>
                 </nav>
-
+                <div class="addprofile   ">
+                      <img  class="w-12 h-12 rounded-full   ">
+                </div>
             </div>
         </div>
     </header>
     <!---------------------------------   nav mobile  ------------------------ -->
-    <nav class="pt-4">
-            <div 
-            class="nav_bar lg:hidden  flex flex-row   w-[90%] h-[66px]  bg-background/20 border backdrop-blur-md border-cremi/10  shadow  shadow-2xl  rounded-full justify-between  mx-auto px-1 gap-1 text-cremi  ">
-
-            <div id="players" class=" flex w-[32.17%] mx-auto   h-[60px]   my-auto   my-auto    ">
-                <a href="index.html"  class="my-auto mx-auto  "> players </a>
-            </div>
-            <div id="game" class=" flex w-[32.17%] h-[60px] my-auto bg-gold rounded-full  ">
-                <a href="game.html"  class="my-auto mx-auto  "> game </a>
-            </div>
-
-            <div id="history" class=" flex  w-[32.17%] h-[60px]   my-auto     ">
-                <a href="history.html" class="my-auto mx-auto   "> history </a>
-
-            </div>
-        </div>
-    </nav>
-    <main>
-        <!-- profile non select -->
+    
+    
           
             <section   id="profileifselected" class="flex flex-col items-center pt-26">
                  <div class="flex flex-col w-[60%] h-60 bg-red-600 rounded-[20px] border-[4px] border-gold text-gold  items-center   ">
@@ -89,11 +74,14 @@
       
         <section id="game_section"  hidden >
         <section class=" pt-4 flex flex-col items-center " >
-            <div class=" grid grid-cols-3 w-[90%] h-14 bg-cremi/10 rounded-full mx-aut text-cremi  justify-items-center ">
-               <p class="flex flex-col my-auto items-center" > PLAYAR 1  <span> 0 </span> </p>
-                <p class="flex flex-col my-auto items-center" > PLAYER 2  <span> 0</span> </p>
-                 <p class="flex flex-col my-auto items-center" > LE ROI  <span > player 1 </span> </p>
-            </div>
+          <div class="grid grid-cols-3 lg:grid-cols-6 w-[90%] gap-2 bg-cremi/10 rounded-[20px] p-2 text-cremi text-center text-sm">
+    <p>Manche <span id="info_manche">1/12</span></p>
+    <p>Groupe <span id="info_groupe">1/4</span></p>
+    <p>Camp <span id="info_camp">Empereur</span></p>
+    <p>Premier <span id="info_premier">Empereur</span></p>
+    <p>Vous <span id="info_player_score">0</span></p>
+    <p>PC <span id="info_pc_score">0</span></p>
+</div>
             <div class="flex flex-row ">
                 <div>
 
@@ -101,36 +89,17 @@
             </div>
         </section>
         <article id="player_1_cart" class="flex flex-col items-center pt-4">
-        <div id="cart_round_player_1" class=" flex flex-row   w-[70%] h-[100px] bg-cremi/10  px-2  rounded-[20px] backdrop-blur-md border border-white/10 border-shadow-lg shadow-2xl  " > 
-            
-            <div  class="my-auto"   >
-                <img src="./img/cart/Roman crown laurel card back.png" >
-
-            </div>
-            <div  class="my-auto">
-                  <img src="./img/cart/Roman crown laurel card back.png" >
-            </div>
-                        <div class="my-auto" >
-                  <img src="./img/cart/Roman crown laurel card back.png" >
-            </div>
-                        <div class="my-auto" >
-                  <img src="./img/cart/Roman crown laurel card back.png" >
-            </div >
-                        <div class="my-auto" >
-                  <img src="./img/cart/Roman crown laurel card back.png" >
-            </div>
-             
-          
+                <div id="cart_round_player_1" class="flex flex-row justify-center gap-2 w-[70%] h-[100px] bg-cremi/10 px-2 rounded-[20px] backdrop-blur-md border border-white/10 shadow-2xl">
 
         </div>
         </article>
         <article  class="flex flex-col items-center pt-4 ">
             <div id="table" class="grid grid-cols-2 w-[89%] h-60 rounded-[20px] backdrop-blur-md border border-white/10 border-shadow-lg shadow-2xl justify-items-center  "   >
-                <div id="tabele_cart_player1" class="w-[70%] h-[70%] backdrop-blur-md border border-cremi/10 border-shadow-lg shadow-2xl my-auto ">
+                <div id="table_pc" class="w-[70%] h-[70%] backdrop-blur-md border border-cremi/10 border-shadow-lg shadow-2xl my-auto ">
 
                 </div>
                 
-                <div id="tabele_cart_player1" class="w-[70%] h-[70%] backdrop-blur-md border border-cremi/10 border-shadow-lg shadow-2xl my-auto ">
+                <div id="table_player" class="w-[70%] h-[70%] backdrop-blur-md border border-cremi/10 border-shadow-lg shadow-2xl my-auto ">
 
                 </div>
                 
@@ -139,30 +108,22 @@
         </article>
 
         <article id="player_2_cart" class="flex flex-col items-center pt-4">
-        <div id="cart_round_player_2" class=" flex flex-row   w-[70%] h-[100px] bg-cremi/10  px-2  rounded-[20px] backdrop-blur-md border border-white/10 border-shadow-lg shadow-2xl  " > 
+        <div id="cart_round_player_2" class=" flex flex-row   w-[70%] h-[100px] bg-cremi/10  px-2  rounded-[20px] backdrop-blur-md border border-white/10 border-shadow-lg shadow-2xl justify-center gap-2 " > 
             
-            <div  class="my-auto"  data-card="Empereur"  >
-                <img  src="./img/cart/empereur.png" >
-
-            </div>
-            <div  class="my-auto" data-card="Citoyen">
-                  <img src="./img/cart/citoyen.png" >
-            </div>
-                        <div class="my-auto"  data-card="Citoyen" >
-                  <img src="./img/cart/citoyen.png" >
-            </div>
-                        <div class="my-auto"  data-card="Citoyen" >
-                  <img src="./img/cart/citoyen.png" >
-            </div >
-                        <div class="my-auto"  data-card="Citoyen" >
-                  <img src="./img/cart/citoyen.png" >
-            </div>
+      
              
           
 
         </div>
         </article>
 
+</section>
+    <section id="fin_match" hidden class="flex flex-col items-center pt-26">
+    <div class="flex flex-col gap-6 w-[80%] lg:w-[40%] p-8 bg-cremi/10 backdrop-blur-md rounded-[20px] border border-gold text-cremi text-center shadow-2xl">
+        <p id="fin_resultat" class="text-[30px] font-bold text-gold"></p>
+        <p id="fin_score" class="text-[20px]"></p>
+        <button id="rejouer" class="bg-gold w-[150px] h-12 mx-auto rounded-[20px] hover:opacity-80">Rejouer</button>
+    </div>
 </section>
     
     </main>
