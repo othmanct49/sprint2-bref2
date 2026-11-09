@@ -1,7 +1,7 @@
 import { list_avatar, deletItemsLS , select_items_byid , addprofil_selected , remplace_profile  } from './storage.js'
 import { get_name_valeur, get_avatar_cliqued, valid_submit, invalid_submit, get_form, getItemdelet  , selectedCART } from './players.js'
-import { error_msg, valid_msg, real_team_avatar, deplecate_name_msg, affichage_profiles, profil_select_affichage ,  checkifprofileselect } from './ui.js'
-import { if_start, nwe_data_game } from './game.js'
+import { error_msg, valid_msg, real_team_avatar, deplecate_name_msg, affichage_profiles, profil_select_affichage, checkifprofileselect, if_start, affichage_player_cart, affichage_table, vider_table, affichage_infos, affichage_pc_cart } from './ui.js'
+import { nouvelle_match, play_cart, fin_manche, if_fin_match, resultat_final, switch_camp  ,qui_commence , groupe} from './game.js'
 const profile_list = document.getElementById('list_profile')
 const game_section = document.getElementById('game_section')
 const createur = document.getElementById('form_creation')
@@ -102,16 +102,61 @@ if (get_start_button) {
   if_start(get_start_button, game_section)
 }
 // ////////////////////////
-let game_data = nwe_data_game()
-if (player_card) {
-  let cart_listener = player_card.addEventListener('click', event => {
-    let cart_clicked = event.target.closest('[data-card]')
-    if (!cart_clicked) {
-      return;
-    }
-    let select_card = cart_clicked.dataset.card
-    console.log(select_card)
+let match = nouvelle_match()
+const player_cart_dom = document.getElementById('cart_round_player_2')
+const pc_cart_dom = document.getElementById('cart_round_player_1')
+if (player_cart_dom) {
+  affichage_player_cart(player_cart_dom, match.player_cart)
+  affichage_pc_cart(pc_cart_dom, match.pc_cart)
+  affichage_infos(match, groupe(match.manche), qui_commence(match.nombre_duel))
+}
+const table_player = document.getElementById('table_player')
+const table_pc = document.getElementById('table_pc')
+const fin_match_dom = document.getElementById('fin_match')
+let bloque = false
 
+if (player_cart_dom) {
+  player_cart_dom.addEventListener('click', event => {
+    if (bloque) return
+
+    const cart_clicked = event.target.closest('[data-index]')
+    if (!cart_clicked) return
+
+    const index = Number(cart_clicked.dataset.index)
+    const { resultat, cart_player, cart_pc } = play_cart(match, index)
+
+    affichage_table(table_player, table_pc, cart_player, cart_pc)
+    bloque = true
+
+        setTimeout(() => {
+      if (resultat !== 'égalité') {
+        fin_manche(match, resultat)
+      }
+
+      if (if_fin_match(match)) {
+        affichage_fin_match(game_section, fin_match_dom, resultat_final(match), match)
+        return
+      }
+
+      vider_table(table_player, table_pc)
+      affichage_player_cart(player_cart_dom, match.player_cart)
+      affichage_pc_cart(pc_cart_dom, match.pc_cart)
+      affichage_infos(match, groupe(match.manche), qui_commence(match.nombre_duel))
+      bloque = false
+    }, 1500)
+  })
+}
+const rejouer_btn = document.getElementById('rejouer')
+if (rejouer_btn) {
+  rejouer_btn.addEventListener('click', () => {
+    match = nouvelle_match()
+    fin_match_dom.hidden = true
+    game_section.hidden = false
+    vider_table(table_player, table_pc)
+    affichage_player_cart(player_cart_dom, match.player_cart)
+    affichage_pc_cart(pc_cart_dom, match.pc_cart)
+    affichage_infos(match, groupe(match.manche), qui_commence(match.nombre_duel))
+    bloque = false
   })
 }
 // /////////////////////////////// delet profile

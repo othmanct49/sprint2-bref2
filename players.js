@@ -111,18 +111,7 @@ export function selectedCART (form  ){
 
 
 
-// else {
-//         const list = get_array()
-//     const index_edit = list.findIndex (profile_data => profile_data.id == checker)
-//     const list_data = get_array ;
-//     list_data[index_edit].nickname = name_form
-//      list_data[index_edit].avatar = avatar_img.getAttribute('src','')
-//       addarrayLS (list_data)
-//      affichage_profiles(dom) 
-//      return null 
-         
 
-//     }
 export function getItemdelet(dom){
    const listener = dom.addEventListener('click' , event => {
       const items_name = event.target.closest('[data-name-delet]')
