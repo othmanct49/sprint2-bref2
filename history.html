@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXE</title>
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="icon" href="./img/logo.png">
+</head>
+
+<body class="lg:bg-[url('/img/bg.png')]  bg-[url('/img/bgm.png')] min-h-screen bg-cover bg-center   ">
+    <!-- <img src="./img/bg.png" alt=""> -->
+    <!-- haider -->
+    <header class="top-0 sticky z-50 ">
+        <div class="bg-background/40  backdrop-blur border-white/20 shadow-lg w-full h-[80px] lg:h-[100px] pt-4 px-4 rounded-[10px]  " >
+            <div class="mx-auto flex max-w-7xl flex-row items-center justify-between  ">
+                <img src="img/logo.png" width="19px">
+                <nav 
+                    class="nav_bar flex  flex flex-row w-[60%]  lg:w-[690px] lg:h-[66px]  bg-background/20 border backdrop-blur-md border-cremi/10  shadow  shadow-2xl  rounded-full justify-between  mx-auto  gap-1 text-cremi  ">
+                    <div id="players" class=" flex w-[32.17%] lg:w-[222px] mx-auto   h-[50px]   my-auto ">
+                        <a href="./index.html" class="my-auto mx-auto hover:opacity-70 focus:outline-none focus-visible:underline"> players </a>
+                    </div>
+                    <div id="game" class=" flex w-[32.17%] lg:w-[222px] h-[50px]   my-auto      ">
+                        <a href="./game.html" class="my-auto mx-auto hover:opacity-70 focus:outline-none focus-visible:underline"> game </a>
+                    </div>
+
+                    <div id="history" class=" flex w-[32.17%]  lg:w-[222px] h-[50px]   my-auto  bg-gold rounded-full   ">
+                        <a href="./history.html" class="my-auto mx-auto hover:opacity-70 focus:outline-none focus-visible:underline"> history </a>
+
+                    </div>
+                </nav>
+                <div class="addprofile flex flex-col items-center">
+                      <img class="w-10 h-10 lg:w-12 lg:h-12 rounded-full" alt="avatar">
+                      <p id="pseudo_header" class="text-cremi text-xs lg:text-sm max-w-[80px] truncate"></p>
+                </div>
+            </div>
+        </div>
+    </header>
+ 
+ 
+      <main class="flex flex-col items-center gap-4 pt-6 w-[90%] lg:w-[70%] mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 w-full">
+            <input id="search_history" aria-label="Chercher un pseudo" placeholder="Chercher un pseudo" class="h-10 px-4 rounded-full bg-background text-cremi border border-cremi/20 focus:outline-none focus:border-gold">
+            <select id="filter_result" aria-label="Filtrer par résultat" class="h-10 px-4 rounded-full bg-background text-cremi border border-cremi/20 cursor-pointer focus:outline-none focus:border-gold">
+                <option value="toutes">Toutes</option>
+                <option value="victoire">Victoires</option>
+                <option value="défaite">Défaites</option>
+                <option value="égalité">Égalités</option>
+            </select>
+            <select id="filter_date" aria-label="Filtrer par date" class="h-10 px-4 rounded-full bg-background text-cremi border border-cremi/20 cursor-pointer focus:outline-none focus:border-gold">
+                <option value="tout">Tout</option>
+                <option value="aujourdhui">Aujourd'hui</option>
+                <option value="7jours">7 derniers jours</option>
+            </select>
+        </div>
+        <div id="list_history" class="flex flex-col gap-3 w-full"></div>
+    </main>
+    <script type="module" src="./main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXE</title>
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="icon" href="./img/logo.png">
+</head>
+ 
+<body class="lg:bg-[url('/img/bg.png')]  bg-[url('/img/bgm.png')] min-h-screen bg-cover bg-center   ">
+    <!-- <img src="./img/bg.png" alt=""> -->
+    <!------------------------------------------------------- haider DESCKTOOOP  -->
+    <header class="top-0 sticky z-50 ">
+        <div class="bg-background/40  backdrop-blur border-white/20 shadow-lg w-full h-[80px] lg:h-[100px] pt-4 px-4 rounded-[10px]  " >
+            <div class="mx-auto flex max-w-7xl flex-row items-center justify-between  ">
+                <img src="img/logo.png" width="19px">
+                <nav 
+                    class="nav_bar flex  flex flex-row w-[60%]  lg:w-[690px] lg:h-[66px]  bg-background/20 border backdrop-blur-md border-cremi/10  shadow  shadow-2xl  rounded-full justify-between  mx-auto px-1 gap-1 text-cremi  ">
+                    <div id="players" class=" flex w-[32.17%] lg:w-[222px] mx-auto   h-[50px]   my-auto ">
+                        <a href="./index.html" class="my-auto mx-auto hover:opacity-70 focus:outline-none focus-visible:underline"> players </a>
+                    </div>
+                    <div id="game" class=" flex w-[32.17%] lg:w-[222px] h-[50px]   my-auto bg-gold rounded-full     ">
+                        <a href="./game.html" class="my-auto mx-auto hover:opacity-70 focus:outline-none focus-visible:underline"> game </a>
+                    </div>
+
+                    <div id="history" class=" flex w-[32.17%]  lg:w-[222px] h-[50px]   my-auto    ">
+                        <a href="./history.html" class="my-auto mx-auto hover:opacity-70 focus:outline-none focus-visible:underline"> history </a>
+
+                    </div>
+                </nav>
+                <div class="addprofile flex flex-col items-center">
+                      <img class="w-10 h-10 lg:w-12 lg:h-12 rounded-full" alt="avatar">
+                      <p id="pseudo_header" class="text-cremi text-xs lg:text-sm max-w-[80px] truncate"></p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!---------------------------------   nav mobile  ------------------------ -->
+    
+    
+          
+            <section   id="profileifselected" class="flex flex-col items-center pt-26">
+                 <div class="flex flex-col w-[60%] h-60 bg-red-600 rounded-[20px] border-[4px] border-gold text-gold  items-center   ">
+                       <div class="  my-auto">
+                        <svg height="100px" width="200px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#D9B66F" stroke="#D9B66F"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="1.024"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:D9B66F;} </style> <g> <path class="st0" d="M509.08,448.217L274.676,42.218c-8.299-14.376-29.051-14.376-37.352,0L2.922,448.217 c-8.301,14.376,2.074,32.347,18.674,32.347h468.806C507.003,480.564,517.378,462.594,509.08,448.217z M277.035,423.636 c0,2.68-9.418,4.853-21.033,4.853c-11.619,0-21.037-2.173-21.037-4.853V389.98c0-2.68,9.418-4.853,21.037-4.853 c11.615,0,21.033,2.174,21.033,4.853V423.636z M273.529,345.11c0.008,0.1,0.066,0.195,0.066,0.3c0,4.344-7.879,7.866-17.594,7.866 c-9.721,0-17.596-3.522-17.596-7.866c0-0.102,0.056-0.198,0.066-0.3l-10.936-140.5c0-4.344,12.744-7.866,28.465-7.866 s28.463,3.522,28.463,7.866L273.529,345.11z"></path> </g> </g></svg>
+                       </div>
+                       <div class="font-bold text-center my-auto" >
+                        <p>Please select a profile before starting the game. </p>
+                       </div>
+                 </div>
+            </section>
+           
+
+
+            <!--  profile select : start game -->
+           <section hidden  id="start_button" class="relative" >
+            <div class=" flex flex-col gap-10 absolute w-[80%] h-[300px] bg-cremi/10   top-[50%] backdrop-blur-md   shadow-2xl left-[50%] -translate-x-[50%] translate-y-[30%] rounded-[20px]  "  >
+                  <div class="flex flex-row pt-11 items-center justify-center gap-1 " >
+                    <img src="./img/cart/esclave.png" width=" 60px" class="rounded-[8px]">
+                    <img src="./img/cart/empereur.png" width="80px" class="rounded-[8px]">
+                    <img src="./img/cart/citoyen.png" width="60" class="rounded-[8px]">
+
+                  </div>
+                  <div class=" flex flex-row justify-center  bg-gold w-[150px] h-14  mx-auto rounded-[20px] text-[20px] text-cremi " >
+                     <button class="w-full h-full rounded-[20px] cursor-pointer hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-cremi">start</button>
+                  </div>
+             </div>
+            </section>
+
+
+
+
+      <!--  game section  -->
+      
+        <section id="game_section"  hidden >
+        <section class=" pt-4 flex flex-col items-center " >
+          <div class="grid grid-cols-3 lg:grid-cols-6 w-[90%] gap-2 bg-cremi/10 rounded-[20px] p-2 text-cremi text-center text-sm">
+    <p>Manche <span id="info_manche">1/12</span></p>
+    <p>Groupe <span id="info_groupe">1/4</span></p>
+    <p>Camp <span id="info_camp">Empereur</span></p>
+    <p>Premier <span id="info_premier">Empereur</span></p>
+    <p>Vous <span id="info_player_score">0</span></p>
+    <p>PC <span id="info_pc_score">0</span></p>
+</div>
+            <div class="flex flex-row ">
+                <div>
+
+                </div>
+            </div>
+        </section>
+        <article id="player_1_cart" class="flex flex-col items-center pt-4">
+                <div id="cart_round_player_1" class="flex flex-row justify-center gap-2 w-[95%] lg:w-[70%] h-[100px] bg-cremi/10 px-2 rounded-[20px] backdrop-blur-md border border-white/10 shadow-2xl">
+
+        </div>
+        </article>
+        <article  class="flex flex-col items-center pt-4 ">
+            <div id="table" class="grid grid-cols-2 w-[89%] h-60 rounded-[20px] backdrop-blur-md border border-white/10 border-shadow-lg shadow-2xl justify-items-center  "   >
+                <div id="table_pc" class="w-[70%] h-[70%] backdrop-blur-md border border-cremi/10 border-shadow-lg shadow-2xl my-auto ">
+
+                </div>
+                
+                <div id="table_player" class="w-[70%] h-[70%] backdrop-blur-md border border-cremi/10 border-shadow-lg shadow-2xl my-auto ">
+
+                </div>
+                
+            </div>
+          
+        </article>
+
+        <article id="player_2_cart" class="flex flex-col items-center pt-4">
+        <div id="cart_round_player_2" class=" flex flex-row   w-[95%] lg:w-[70%] h-[100px] bg-cremi/10  px-2  rounded-[20px] backdrop-blur-md border border-white/10 border-shadow-lg shadow-2xl justify-center gap-2 " > 
+            
+      
+             
+          
+
+        </div>
+        </article>
+
+</section>
+    <section id="fin_match" hidden class="flex flex-col items-center pt-26">
+    <div class="flex flex-col gap-6 w-[80%] lg:w-[40%] p-8 bg-cremi/10 backdrop-blur-md rounded-[20px] border border-gold text-cremi text-center shadow-2xl">
+        <p id="fin_resultat" class="text-[30px] font-bold text-gold"></p>
+        <p id="fin_score" class="text-[20px]"></p>
+        <button id="rejouer" class="bg-gold w-[150px] h-12 mx-auto rounded-[20px] hover:opacity-80 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-cremi">Rejouer</button>
+    </div>
+</section>
+    
+    </main>
+<script type="module" src="./main.js" ></script>
+</body>
+
+</html>
